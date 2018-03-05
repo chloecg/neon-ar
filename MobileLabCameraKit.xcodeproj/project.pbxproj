@@ -7,12 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F76AEF7204DAE3700FAEFB9 /* NeonAR in Resources */ = {isa = PBXBuildFile; fileRef = 2F76AEF6204DAE3700FAEFB9 /* NeonAR */; };
+		6AC03AE1204AE97700FA1179 /* grinning-face.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AC03AE0204AE97700FA1179 /* grinning-face.png */; };
+		6AC03AE3204AEA2B00FA1179 /* face-tongue.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AC03AE2204AEA2B00FA1179 /* face-tongue.png */; };
+		6AC0758A20474F8C00E14750 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0758920474F8C00E14750 /* AppDelegate.swift */; };
+		6AC0758C20474F8C00E14750 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0758B20474F8C00E14750 /* ViewController.swift */; };
+		6AC075A22047500300E14750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AC0759C2047500300E14750 /* Assets.xcassets */; };
+		6AC075A32047500300E14750 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC0759D2047500300E14750 /* LaunchScreen.storyboard */; };
+		6AC075A42047500300E14750 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AC0759F2047500300E14750 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2F76AEF6204DAE3700FAEFB9 /* NeonAR */ = {isa = PBXFileReference; lastKnownFileType = folder; path = NeonAR; sourceTree = "<group>"; };
+		6AC03AE0204AE97700FA1179 /* grinning-face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grinning-face.png"; sourceTree = "<group>"; };
+		6AC03AE2204AEA2B00FA1179 /* face-tongue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "face-tongue.png"; sourceTree = "<group>"; };
 		6AC0758620474F8C00E14750 /* MobileLabCameraKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileLabCameraKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AC0758920474F8C00E14750 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6AC0758B20474F8C00E14750 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6AC0759C2047500300E14750 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6AC0759E2047500300E14750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6AC075A02047500300E14750 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6AC075A12047500300E14750 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,8 +42,8 @@
 		6AC0757D20474F8C00E14750 = {
 			isa = PBXGroup;
 			children = (
+				6AC0758820474F8C00E14750 /* MobileLabCameraKit */,
 				6AC0758720474F8C00E14750 /* Products */,
-				2F76AEF6204DAE3700FAEFB9 /* NeonAR */,
 			);
 			sourceTree = "<group>";
 		};
@@ -40,6 +53,29 @@
 				6AC0758620474F8C00E14750 /* MobileLabCameraKit.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6AC0758820474F8C00E14750 /* MobileLabCameraKit */ = {
+			isa = PBXGroup;
+			children = (
+				6AC0758920474F8C00E14750 /* AppDelegate.swift */,
+				6AC0758B20474F8C00E14750 /* ViewController.swift */,
+				6AC0759B2047500300E14750 /* Resources */,
+			);
+			path = MobileLabCameraKit;
+			sourceTree = "<group>";
+		};
+		6AC0759B2047500300E14750 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6AC0759F2047500300E14750 /* Main.storyboard */,
+				6AC0759D2047500300E14750 /* LaunchScreen.storyboard */,
+				6AC0759C2047500300E14750 /* Assets.xcassets */,
+				6AC075A12047500300E14750 /* Info.plist */,
+				6AC03AE0204AE97700FA1179 /* grinning-face.png */,
+				6AC03AE2204AEA2B00FA1179 /* face-tongue.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,7 +114,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6AC0758120474F8C00E14750 /* Build configuration list for PBXProject "NeonAR" */;
+			buildConfigurationList = 6AC0758120474F8C00E14750 /* Build configuration list for PBXProject "MobileLabCameraKit" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -101,7 +137,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F76AEF7204DAE3700FAEFB9 /* NeonAR in Resources */,
+				6AC03AE1204AE97700FA1179 /* grinning-face.png in Resources */,
+				6AC075A42047500300E14750 /* Main.storyboard in Resources */,
+				6AC075A22047500300E14750 /* Assets.xcassets in Resources */,
+				6AC03AE3204AEA2B00FA1179 /* face-tongue.png in Resources */,
+				6AC075A32047500300E14750 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,10 +152,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AC0758C20474F8C00E14750 /* ViewController.swift in Sources */,
+				6AC0758A20474F8C00E14750 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6AC0759D2047500300E14750 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AC0759E2047500300E14750 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6AC0759F2047500300E14750 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AC075A02047500300E14750 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6AC0759620474F8D00E14750 /* Debug */ = {
@@ -258,7 +319,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6AC0758120474F8C00E14750 /* Build configuration list for PBXProject "NeonAR" */ = {
+		6AC0758120474F8C00E14750 /* Build configuration list for PBXProject "MobileLabCameraKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6AC0759620474F8D00E14750 /* Debug */,

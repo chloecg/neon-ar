@@ -20,7 +20,8 @@ import Vision
 
 // let Edges = "Edges"
 let EdgesEffectFilter = CIFilter(name: "CIEdges", withInputParameters: ["inputIntensity" : 50])
-
+let NoFilter: CIFilter? = nil
+var FilterOn:Bool = false
 // let Plasma = "Plasma"
 //let PlasmaFilter = SimplePlasma()
 
@@ -37,55 +38,54 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     // Real time camera capture session.
     var captureSession = AVCaptureSession()
-
+    
     // References to camera devices.
     var backCamera: AVCaptureDevice?
     var frontCamera: AVCaptureDevice?
     var currentCamera: AVCaptureDevice?
-
+    
     // Context for using Core Image filters.
     let context = CIContext()
     
     // Track device orientation changes.
     var orientation: AVCaptureVideoOrientation = .portrait
-
+    
     // Use location manager to get heading.
     let locationManager = CLLocationManager()
-
+    
     // Reference to current filter.
     var currentFilter: CIFilter?
     var filterIndex = 0
     
     // Image view for filtered image.
     @IBOutlet weak var filteredImage: UIImageView!
-
+    
     // Label for magnetic heading value.
     @IBOutlet weak var headingLabel: UILabel!
-
+    
     // Outlets to buttons.
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var visionButton: UIButton!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        currentFilter = EdgesEffectFilter
-
+        
+   
         // Camera device setup.
         setupDevice()
         setupInputOutput()
-
-
+        
+        
         // Configure location manager to get heading. //******whyneedheading????
         if (CLLocationManager.headingAvailable()) {
             locationManager.headingFilter = 1
             locationManager.startUpdatingHeading()
             locationManager.delegate = self
         }
-
-
+        
+        
         
     }
     
@@ -94,10 +94,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         
         // Detect device orientation changes.
         orientation = AVCaptureVideoOrientation(rawValue: UIApplication.shared.statusBarOrientation.rawValue)!
-    
+        
     }
     
-
+    
     // Toggle front/back camera
     @IBAction func handleCameraButton(_ sender: UIButton) {
         switchCameraInput()
@@ -106,56 +106,100 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         let buttonTitle = currentCamera == frontCamera ? "Front Camera" : "Back Camera"
         cameraButton.setTitle(buttonTitle, for: .normal)
     }
-
+    
     // Cycle through filters.
     @IBAction func handleFilterButton(_ sender: UIButton) {
         print("button useless")
-        // Set current filter.
+//        if FilterOn {
+//            FilterOn = false
+//        } else {
+//            FilterOn = true }
+////        currentFilter = EdgesEffectFilter
+//            // Set current filter.
     }
     
-
+    
     // CLLocationManagerDelegate method returns heading.
-    func locationManager(_ manager: CLLocationManager, didUpdateHeading heading: CLHeading) {
-        headingLabel.text = "Heading: \(Int(heading.magneticHeading))"
-    }
+    //    func locationManager(_ manager: CLLocationManager, didUpdateHeading heading: CLHeading) {
+    //        headingLabel.text = "Heading: \(Int(heading.magneticHeading))"
+    //    }
     
-
+    
     // AVCaptureVideoDataOutputSampleBufferDelegate method.
     func captureOutput(_ output: AVCaptureOutput,
                        didOutput sampleBuffer: CMSampleBuffer,
                        from connection: AVCaptureConnection) {
-
+        
+        let rawMetadata = CMCopyDictionaryOfAttachments(nil, sampleBuffer, CMAttachmentMode(kCMAttachmentMode_ShouldPropagate))
+        let metadata = CFDictionaryCreateMutableCopy(nil, 0, rawMetadata) as NSMutableDictionary
+        let exifData = metadata.value(forKey: "{Exif}") as? NSMutableDictionary
+        
+        let FNumber : Double = exifData?["FNumber"] as! Double
+        let ExposureTime : Double = exifData?["ExposureTime"] as! Double
+        let ISOSpeedRatingsArray = exifData!["ISOSpeedRatings"] as? NSArray
+        let ISOSpeedRatings : Double = ISOSpeedRatingsArray![0] as! Double
+        let CalibrationConstant : Double = 50
+        
+        //Calculating the luminosity
+        let luminosity : Double = (CalibrationConstant * FNumber * FNumber ) / ( ExposureTime * ISOSpeedRatings )
+        
+        print(luminosity)
+        
+        if luminosity < 30 {
+            FilterOn = true
+        } else {
+            FilterOn = false
+        }
+      
+        
+        
         // Set correct device orientation.
         connection.videoOrientation = orientation
         
         // Get pixel buffer.
         let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
         var cameraImage = CIImage(cvImageBuffer: pixelBuffer!)
-
+        
         // Mirror camera image if using front camera.
         if currentCamera == frontCamera {
             cameraImage = cameraImage.oriented(.upMirrored)
         }
-
+        
+        
+        
         // Get the filtered image if a currentFilter is set.
         var filteredImage: UIImage!
-        self.currentFilter!.setValue(cameraImage, forKey: kCIInputImageKey)
         
-        let outputOfEdgesFilter = self.currentFilter!.outputImage!
+        if FilterOn {
+            currentFilter = EdgesEffectFilter
+        } else {
+            currentFilter = NoFilter
+        }
         
-        let combinedOutput = outputOfEdgesFilter
-            .applyingFilter("CIBloom", parameters: ["inputIntensity" : 2.0, "inputRadius": 10.0])
+        if currentFilter == nil {
+            filteredImage =  UIImage(ciImage: cameraImage)
             
+        } else {
+            
+            self.currentFilter?.setValue(cameraImage, forKey: kCIInputImageKey)
+            
+            let outputOfEdgesFilter = self.currentFilter?.outputImage!
+            
+            let combinedOutput = outputOfEdgesFilter?
+                .applyingFilter("CIBloom", parameters: ["inputIntensity" : 2.0, "inputRadius": 10.0])
+            
+            let cgImage = self.context.createCGImage(combinedOutput!, from: cameraImage.extent)
+            filteredImage = UIImage(cgImage: cgImage!)
+            
+        }
         
         
         
-        let cgImage = self.context.createCGImage(combinedOutput, from: cameraImage.extent)!
-        filteredImage = UIImage(cgImage: cgImage)
-
         // Set image view outlet with filtered image.
         DispatchQueue.main.async {
-            self.filteredImage.image = filteredImage
+            self.filteredImage?.image = filteredImage
         }
+
     }
 }
 
@@ -163,7 +207,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 ///////////////////////////////////////////////////////////////
 // Helper methods to setup camera capture view.
 extension ViewController {
-   
+    
     func setupDevice() {
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera],
                                                                       mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
@@ -226,7 +270,7 @@ extension ViewController {
             }
         }
     }
-
+    
     func cameraWithPosition(position: AVCaptureDevice.Position) -> AVCaptureDevice? {
         let discovery = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera],
                                                          mediaType: AVMediaType.video,
@@ -273,3 +317,5 @@ extension ViewController {
         self.captureSession.commitConfiguration()
     }
 }
+
+
