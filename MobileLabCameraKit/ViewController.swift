@@ -72,7 +72,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-   
+        
         // Camera device setup.
         setupDevice()
         setupInputOutput()
@@ -110,12 +110,12 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     // Cycle through filters.
     @IBAction func handleFilterButton(_ sender: UIButton) {
         print("button useless")
-//        if FilterOn {
-//            FilterOn = false
-//        } else {
-//            FilterOn = true }
-////        currentFilter = EdgesEffectFilter
-//            // Set current filter.
+        //        if FilterOn {
+        //            FilterOn = false
+        //        } else {
+        //            FilterOn = true }
+        ////        currentFilter = EdgesEffectFilter
+        //            // Set current filter.
     }
     
     
@@ -143,14 +143,16 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         //Calculating the luminosity
         let luminosity : Double = (CalibrationConstant * FNumber * FNumber ) / ( ExposureTime * ISOSpeedRatings )
         
+        let lumiThreshold : Double = 15
+        
         print(luminosity)
         
-        if luminosity < 30 {
+        if luminosity < lumiThreshold {
             FilterOn = true
         } else {
             FilterOn = false
         }
-      
+        
         
         
         // Set correct device orientation.
@@ -171,7 +173,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         var filteredImage: UIImage!
         
         if FilterOn {
-            currentFilter = EdgesEffectFilter
+            currentFilter = CIFilter(name: "CIEdges", withInputParameters: ["inputIntensity" : (lumiThreshold - luminosity)*2])!
         } else {
             currentFilter = NoFilter
         }
@@ -199,7 +201,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         DispatchQueue.main.async {
             self.filteredImage?.image = filteredImage
         }
-
+        
     }
 }
 
