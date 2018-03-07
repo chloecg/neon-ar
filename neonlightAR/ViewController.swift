@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  MobileLabCameraKit
+//  neonlightAR
 //
 //  Created by Seyoung Kim and Chloe Gao on 2/28/18.
 //  Copyright Seyoung Kim and Chloe Gao. All rights reserved.
@@ -12,30 +12,17 @@ import CoreLocation
 import Vision
 
 
-// Sample filters and settings.
-// For more resournces/examples:
-//   https://developer.apple.com/library/content/documentation/GraphicsImaging/Reference/CoreImageFilterReference/index.html
-//   https://developer.apple.com/library/content/documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html
-//   https://github.com/FlexMonkey/Filterpedia
-
 // let Edges = "Edges"
 let EdgesEffectFilter = CIFilter(name: "CIEdges", withInputParameters: ["inputIntensity" : 50])
 let NoFilter: CIFilter? = nil
 var FilterOn:Bool = false
-// let Plasma = "Plasma"
-//let PlasmaFilter = SimplePlasma()
 
 // let Bloom = "Bloom"
 let BloomFilter = CIFilter(name: "CIBloom", withInputParameters:
     ["inputIntensity" : 0.5, "inputRadius": 10.0]
 )
 
-//
-//let LineOverlay = "Line Overlay"
-//let LineOverlayFilter = CIFilter(name: "CILineOverlay")
-
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate, CLLocationManagerDelegate {
-    
     // Real time camera capture session.
     var captureSession = AVCaptureSession()
     
@@ -55,77 +42,48 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     // Reference to current filter.
     var currentFilter: CIFilter?
-    var filterIndex = 0
     
     // Image view for filtered image.
     @IBOutlet weak var filteredImage: UIImageView!
     
-    // Label for magnetic heading value.
-    @IBOutlet weak var headingLabel: UILabel!
-    
-    // Outlets to buttons.
     @IBOutlet weak var cameraButton: UIButton!
-    @IBOutlet weak var filterButton: UIButton!
-    @IBOutlet weak var visionButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         // Camera device setup.
         setupDevice()
         setupInputOutput()
         
-        
-        // Configure location manager to get heading. //******whyneedheading????
+        // Configure location manager to get heading.
         if (CLLocationManager.headingAvailable()) {
             locationManager.headingFilter = 1
             locationManager.startUpdatingHeading()
             locationManager.delegate = self
         }
-        
-        
-        
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
         
         // Detect device orientation changes.
         orientation = AVCaptureVideoOrientation(rawValue: UIApplication.shared.statusBarOrientation.rawValue)!
-        
+
     }
     
-    
     // Toggle front/back camera
+    
     @IBAction func handleCameraButton(_ sender: UIButton) {
         switchCameraInput()
         
-        // Set button title.
         let buttonTitle = currentCamera == frontCamera ? "Front Camera" : "Back Camera"
         cameraButton.setTitle(buttonTitle, for: .normal)
     }
     
-    // Cycle through filters.
-    @IBAction func handleFilterButton(_ sender: UIButton) {
-        print("button useless")
-        //        if FilterOn {
-        //            FilterOn = false
-        //        } else {
-        //            FilterOn = true }
-        ////        currentFilter = EdgesEffectFilter
-        //            // Set current filter.
-    }
+
     
     
-    // CLLocationManagerDelegate method returns heading.
-    //    func locationManager(_ manager: CLLocationManager, didUpdateHeading heading: CLHeading) {
-    //        headingLabel.text = "Heading: \(Int(heading.magneticHeading))"
-    //    }
-    
-    
-    // AVCaptureVideoDataOutputSampleBufferDelegate method.
     func captureOutput(_ output: AVCaptureOutput,
                        didOutput sampleBuffer: CMSampleBuffer,
                        from connection: AVCaptureConnection) {
@@ -318,6 +276,7 @@ extension ViewController {
         
         self.captureSession.commitConfiguration()
     }
-}
 
+
+}
 
