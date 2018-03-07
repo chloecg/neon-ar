@@ -77,8 +77,6 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     @IBAction func handleCameraButton(_ sender: UIButton) {
         switchCameraInput()
         
-        let buttonTitle = currentCamera == frontCamera ? "Front Camera" : "Back Camera"
-        cameraButton.setTitle(buttonTitle, for: .normal)
     }
     
 

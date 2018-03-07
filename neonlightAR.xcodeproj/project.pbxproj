@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		897302E720504F410062087F /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 897302E620504F410062087F /* camera.png */; };
 		89B6D997204CE11400D9D26F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B6D996204CE11400D9D26F /* AppDelegate.swift */; };
 		89B6D999204CE11400D9D26F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B6D998204CE11400D9D26F /* ViewController.swift */; };
 		89B6D99C204CE11400D9D26F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B6D99A204CE11400D9D26F /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		897302E620504F410062087F /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera.png; path = ../../../../Desktop/camera.png; sourceTree = "<group>"; };
 		89B6D993204CE11400D9D26F /* neonlightAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = neonlightAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B6D996204CE11400D9D26F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89B6D998204CE11400D9D26F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		89B6D9A8204CE85800D9D26F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				897302E620504F410062087F /* camera.png */,
 				89B6D99D204CE11400D9D26F /* Assets.xcassets */,
 				89B6D99F204CE11400D9D26F /* LaunchScreen.storyboard */,
 				89B6D99A204CE11400D9D26F /* Main.storyboard */,
@@ -138,6 +141,7 @@
 				89DEE1CF204FB39B00A713B5 /* Default-568h@2x.png in Resources */,
 				89B6D99E204CE11400D9D26F /* Assets.xcassets in Resources */,
 				89B6D99C204CE11400D9D26F /* Main.storyboard in Resources */,
+				897302E720504F410062087F /* camera.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
