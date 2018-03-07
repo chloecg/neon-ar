@@ -144,7 +144,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             let outputOfEdgesFilter = self.currentFilter?.outputImage!
             
             let combinedOutput = outputOfEdgesFilter?
-                .applyingFilter("CIBloom", parameters: ["inputIntensity" : 2.0, "inputRadius": 10.0])
+                .applyingFilter("CIBloom", parameters: ["inputIntensity" : 2.5, "inputRadius": 10.0])
             
             let cgImage = self.context.createCGImage(combinedOutput!, from: cameraImage.extent)
             filteredImage = UIImage(cgImage: cgImage!)
