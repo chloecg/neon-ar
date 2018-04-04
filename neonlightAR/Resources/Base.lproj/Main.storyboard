@@ -39,6 +39,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cameraButton" destination="LPh-Qb-9Nx" id="v2K-cz-IEQ"/>
                         <outlet property="filteredImage" destination="ncw-LF-q2N" id="ngb-jm-BSx"/>
