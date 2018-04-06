@@ -1,0 +1,343 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2FFA05AC2071720E00985FC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA05AB2071720E00985FC2 /* AppDelegate.swift */; };
+		2FFA05B02071720E00985FC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA05AF2071720E00985FC2 /* ViewController.swift */; };
+		2FFA05B32071720E00985FC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFA05B12071720E00985FC2 /* Main.storyboard */; };
+		2FFA05B52071720E00985FC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FFA05B42071720E00985FC2 /* Assets.xcassets */; };
+		2FFA05B82071720E00985FC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFA05B62071720E00985FC2 /* LaunchScreen.storyboard */; };
+		2FFA05C220717CCA00985FC2 /* PlacesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA05C120717CCA00985FC2 /* PlacesLoader.swift */; };
+		890384CA2071D9DE00B6ADF4 /* NodeRender.metal in Sources */ = {isa = PBXBuildFile; fileRef = 890384C72071D9DE00B6ADF4 /* NodeRender.metal */; };
+		890384CB2071D9DE00B6ADF4 /* NodeTechnique.plist in Resources */ = {isa = PBXBuildFile; fileRef = 890384C82071D9DE00B6ADF4 /* NodeTechnique.plist */; };
+		890384CC2071D9DE00B6ADF4 /* Neon Glow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 890384C92071D9DE00B6ADF4 /* Neon Glow.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2FFA05A82071720E00985FC2 /* NeonNYC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeonNYC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FFA05AB2071720E00985FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2FFA05AF2071720E00985FC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2FFA05B22071720E00985FC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2FFA05B42071720E00985FC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2FFA05B72071720E00985FC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2FFA05B92071720E00985FC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FFA05C120717CCA00985FC2 /* PlacesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesLoader.swift; sourceTree = "<group>"; };
+		890384C72071D9DE00B6ADF4 /* NodeRender.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = NodeRender.metal; sourceTree = "<group>"; };
+		890384C82071D9DE00B6ADF4 /* NodeTechnique.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NodeTechnique.plist; sourceTree = "<group>"; };
+		890384C92071D9DE00B6ADF4 /* Neon Glow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Neon Glow.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2FFA05A52071720E00985FC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2FFA059F2071720E00985FC2 = {
+			isa = PBXGroup;
+			children = (
+				2FFA05AA2071720E00985FC2 /* NeonNYC */,
+				2FFA05A92071720E00985FC2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2FFA05A92071720E00985FC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FFA05A82071720E00985FC2 /* NeonNYC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2FFA05AA2071720E00985FC2 /* NeonNYC */ = {
+			isa = PBXGroup;
+			children = (
+				2FFA05AB2071720E00985FC2 /* AppDelegate.swift */,
+				2FFA05AF2071720E00985FC2 /* ViewController.swift */,
+				2FFA05C120717CCA00985FC2 /* PlacesLoader.swift */,
+				2FFA05B12071720E00985FC2 /* Main.storyboard */,
+				890384C92071D9DE00B6ADF4 /* Neon Glow.ttf */,
+				890384C72071D9DE00B6ADF4 /* NodeRender.metal */,
+				890384C82071D9DE00B6ADF4 /* NodeTechnique.plist */,
+				2FFA05B42071720E00985FC2 /* Assets.xcassets */,
+				2FFA05B62071720E00985FC2 /* LaunchScreen.storyboard */,
+				2FFA05B92071720E00985FC2 /* Info.plist */,
+			);
+			path = NeonNYC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2FFA05A72071720E00985FC2 /* NeonNYC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FFA05BC2071720E00985FC2 /* Build configuration list for PBXNativeTarget "NeonNYC" */;
+			buildPhases = (
+				2FFA05A42071720E00985FC2 /* Sources */,
+				2FFA05A52071720E00985FC2 /* Frameworks */,
+				2FFA05A62071720E00985FC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NeonNYC;
+			productName = NeonNYC;
+			productReference = 2FFA05A82071720E00985FC2 /* NeonNYC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2FFA05A02071720E00985FC2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = SeyoungKim;
+				TargetAttributes = {
+					2FFA05A72071720E00985FC2 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2FFA05A32071720E00985FC2 /* Build configuration list for PBXProject "NeonNYC" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2FFA059F2071720E00985FC2;
+			productRefGroup = 2FFA05A92071720E00985FC2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2FFA05A72071720E00985FC2 /* NeonNYC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2FFA05A62071720E00985FC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				890384CC2071D9DE00B6ADF4 /* Neon Glow.ttf in Resources */,
+				2FFA05B82071720E00985FC2 /* LaunchScreen.storyboard in Resources */,
+				890384CB2071D9DE00B6ADF4 /* NodeTechnique.plist in Resources */,
+				2FFA05B52071720E00985FC2 /* Assets.xcassets in Resources */,
+				2FFA05B32071720E00985FC2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2FFA05A42071720E00985FC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FFA05C220717CCA00985FC2 /* PlacesLoader.swift in Sources */,
+				2FFA05B02071720E00985FC2 /* ViewController.swift in Sources */,
+				2FFA05AC2071720E00985FC2 /* AppDelegate.swift in Sources */,
+				890384CA2071D9DE00B6ADF4 /* NodeRender.metal in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2FFA05B12071720E00985FC2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FFA05B22071720E00985FC2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2FFA05B62071720E00985FC2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FFA05B72071720E00985FC2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2FFA05BA2071720E00985FC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2FFA05BB2071720E00985FC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2FFA05BD2071720E00985FC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PZ779G7NTY;
+				INFOPLIST_FILE = NeonNYC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SeyoungKimChloeGao.NeonNYC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2FFA05BE2071720E00985FC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PZ779G7NTY;
+				INFOPLIST_FILE = NeonNYC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SeyoungKimChloeGao.NeonNYC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2FFA05A32071720E00985FC2 /* Build configuration list for PBXProject "NeonNYC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FFA05BA2071720E00985FC2 /* Debug */,
+				2FFA05BB2071720E00985FC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FFA05BC2071720E00985FC2 /* Build configuration list for PBXNativeTarget "NeonNYC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FFA05BD2071720E00985FC2 /* Debug */,
+				2FFA05BE2071720E00985FC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2FFA05A02071720E00985FC2 /* Project object */;
+}
